@@ -11,7 +11,7 @@ output "worker_public_ip" {
 output "next_steps" {
   description = "Instructions to join the cluster"
   value       = <<-EOT
-    1. SSH into Master: ssh -i ~/.ssh/ecommerce-key.pem ubuntu@${module.ec2.master_public_ip}
+    1. SSH into Master: ssh -i ~/ecommerce-key.pem ubuntu@${module.ec2.master_public_ip}    >> >>> path of your pem key
     2. Run this command on Master to get join token:
        sudo kubeadm token create --print-join-command
     3. SSH into Worker: ssh -i ~/ecommerce-key.pem ubuntu@${module.ec2.worker_public_ip}  >>> path of your pem key
